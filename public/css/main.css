@@ -1,6 +1,19 @@
+* {
+    outline: none; /* OSX fix */
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     background-color: #ECF0F1;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 .container {
     display: flex;
@@ -14,12 +27,17 @@ body {
 
 [class*='col-'] {
     flex-grow: 1;
-    margin: 0 15px;
     padding: 15px;
 }
 
+[class*='col-'] .content {
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
+}
+
 .col-1-4 {
-    flex-basis: 25%;
+    flex-basis: 20%;
 }
 
 .col-2-4 {
@@ -27,7 +45,7 @@ body {
 }
 
 .col-3-4 {
-    flex-basis: 75%;
+    flex-basis: 80%;
 }
 
 .col-4 {
@@ -36,22 +54,31 @@ body {
 
 .turq {
     background-color: #1abc9c;
+    color: #fff;
 }
 
 .green {
     background-color: #2ecc71;
+    color: #fff;
 }
 
 .blue {
     background-color: #3498db;
+    color: #fff;
 }
 
 .purple {
     background-color: #9b59b6;
+    color: #fff;
 }
 
 .dark-blue {
     background-color: #34495e;
+    color: #fff;
+}
+
+.white {
+    background-color: #fff;
 }
 
 .btn {
@@ -59,14 +86,30 @@ body {
     position: relative;
     width: 120px;
     height: 32px;
-    line-height: 32px;
+    border: none;
     border-radius: 2px;
     font-size: 0.9em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    background-color: #fff;
-    color: #646464;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
+.btn:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.logo-wrapper {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    display: inline;
+}
+
 
 .card {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -89,13 +132,35 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
-.logo-wrapper {
-    width: 200px;
-    margin: 0 auto;
-    text-align: center;
+#trigger h1 {
+    margin-top: 5px;
+}
+#trigger input[type="text"] {
+    padding: 5px 0;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 2px solid #16A085;
+    background-color: transparent;
+    color: #006D52;
+    transition: all 150ms ease-out;
 }
 
-.logo {
-    display: inline;
+#trigger input[type="text"]:focus {
+    border-bottom: 2px solid #006D52;
+}
+
+#trigger input[type="text"]::-webkit-input-placeholder {
+    color: #16A085;
+}
+
+#trigger input[type="text"]:-moz-placeholder { /* Firefox 18- */
+    color: #16A085;
+}
+
+#trigger input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+    color: #16A085;
+}
+
+#trigger input[type="text"]:-ms-input-placeholder {
+    color: #16A085;
 }
