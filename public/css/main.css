@@ -71,8 +71,8 @@ body {
     color: #fff;
 }
 
-.purple {
-    background-color: #9b59b6;
+.yellow {
+    background-color: #f1c40f;
     color: #fff;
 }
 
@@ -233,7 +233,26 @@ footer .copyright p {
     color: white;
 }
 
+#actions {
+    width: 150px;
+    position: fixed;
+    bottom: 75px;
+    right: 15px;
+}
+
+#actions .btn {
+    width: 100%;
+    margin-bottom: 15px;
+    height:35px;
+    padding: 7px;
+    text-align: center;
+}
+
 @media (max-width: 480px){
+    #gameArea {
+        padding:0;
+        margin-bottom: 50px;
+    }
     .card {
         width: 90px;
         height: 150px;
