@@ -52,6 +52,10 @@ body {
     flex-basis: 100%;
 }
 
+.hide {
+    display: none;
+}
+
 .turq {
     background-color: #1abc9c;
     color: #fff;
@@ -132,12 +136,17 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+#menu [class*='col-'] .content {
+    height: 210px;
+}
 #trigger h1 {
     margin-top: 5px;
 }
 #trigger input[type="text"] {
     padding: 5px 0;
     margin-bottom: 15px;
+    width: 100%;
     border: 0;
     border-bottom: 2px solid #16A085;
     background-color: transparent;
@@ -163,4 +172,14 @@ body {
 
 #trigger input[type="text"]:-ms-input-placeholder {
     color: #16A085;
+}
+
+#score h1 {
+    margin-top: 5px;
+}
+
+#score span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    letter-spacing: -1px;
 }
