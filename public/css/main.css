@@ -83,6 +83,12 @@ body {
 
 .white {
     background-color: #fff;
+    color: black;
+}
+
+.red {
+    background-color: #c0392b;
+    color: white;
 }
 
 .btn {
@@ -164,7 +170,8 @@ body {
 #gameArea {
     width: 100%;
     max-width: 1280px;
-    margin: 0 auto;
+    min-height: 400px;
+    margin: 0 auto 85px auto;
     padding: 30px;
     background-image: url('../img/felt.png');
     background-repeat: repeat;
@@ -174,6 +181,11 @@ body {
     content: "";
     display: table;
     clear: both;
+}
+
+#gameArea p {
+    color: white;
+    text-align: center;
 }
 
 .card {
@@ -190,6 +202,7 @@ body {
 
 .card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor:pointer;
 }
 
 .card.zero {
@@ -210,6 +223,12 @@ body {
 
 .card.four {
     background-image: url('../img/card-4-desktop.png');
+}
+
+.card.selected {
+    box-shadow: none;
+    opacity: 0.5;
+    cursor: no-drop;
 }
 
 footer {
@@ -248,7 +267,8 @@ footer .copyright p {
     text-align: center;
 }
 
-@media (max-width: 480px){
+
+@media screen and (max-width: 480px){
     #gameArea {
         padding:0;
         margin-bottom: 50px;

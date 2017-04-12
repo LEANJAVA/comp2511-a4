@@ -18,42 +18,32 @@
     <section id="menu" class="container">
         <div class="col-1-4">
             <div class="content white">
-                <form id="trigger" method="POST" action="">
+                <form id="trigger" method="POST" action="http://ins.mtroyal.ca/~nkhemka/test/process.php">
                     <h1>Start</h1>
-                    <input value="asdf" name="player1" type="text" placeholder="Player 1">
-                    <input value="asdf" name="player2" type="text" placeholder="Player 2">
+                    <input name="player1" type="text" placeholder="Player 1" required>
+                    <input name="player2" type="text" placeholder="Player 2" required>
                     <input class="btn green" type="submit" value="New Game">
                 </form>
             </div>
         </div>
         <div class="col-2-4">
-            <div id="turn" class="content blue">
-                No game
+            <div id="turns" class="content blue">
+                <p class="nogame">No game in progress</p>
             </div>
         </div>
         <div class="col-1-4">
             <div id="score" class="content turq">
                 <h1>Current Score</h1>
-                <div class="player">
-                    <span class="player-1">Billy Joe:</span> <span class="player-1-score">22</span>
-                </div>
-                <div class="player">
-                    <span class="player-2">Joe:</span> <span class="player-2-score">43</span>
-                </div>
 
             </div>
         </div>
     </section>
     <main id="gameArea">
-        <div class="card zero"></div>
-        <div class="card one"></div>
-        <div class="card two"></div>
-        <div class="card three"></div>
-        <div class="card four"></div>
+        <p class="nogame">No game in progress</p>
     </main>
     <aside id="actions">
-        <div class="btn green">Skip Turn</div>
-        <div class="btn yellow">Skip Turn</div>
+        <div id="end-turn" class="btn green">End Turn</div>
+        <div id="end-game" class="btn red">End Game</div>
     </aside>
     <footer>
         <div class="copyright">
