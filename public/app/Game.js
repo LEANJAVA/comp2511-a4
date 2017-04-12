@@ -6,6 +6,7 @@ function Game($form)
     this.cards = [];
     this.players = [];
     var _ = this;
+    this.resetBoard();
     this.$form.submit(function (e) {
         e.preventDefault();
         _.start();
@@ -33,10 +34,14 @@ Game.prototype.setPlayer = function (name) {
     this.players.push(new Player(name));
 };
 
-Game.prototype.setCards = function (o)
+Game.prototype.setCards = function ()
 {
     for (var i = 0; i < o.Cards.lenth; i++) {
         this.cards.push(new Card(this, o.Cards[i].value));
     }
 
 };
+
+Game.prototype.resetBoard = function (o) {
+    $('.players').remove();
+}
